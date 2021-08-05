@@ -28,6 +28,7 @@ func bubbleSort(arr []int) {
 		}
 		for _, v := range arr {
 			fmt.Print(v)
+			fmt.Print(" ")
 		}
 		fmt.Println()
 	}
@@ -50,6 +51,7 @@ func bubbleSort2(arr []int) {
 		}
 		for _, v := range arr {
 			fmt.Print(v)
+			fmt.Print(" ")
 		}
 		fmt.Println()
 	}
