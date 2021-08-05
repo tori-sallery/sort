@@ -6,7 +6,7 @@ func main() {
 	//从小到大
 	originArr := []int{3, 7, 4, 0, 9, 31}
 	bubbleSort(originArr)
-	bubbleSort(originArr)
+	bubbleSort2(originArr)
 	for _, v := range originArr {
 		fmt.Println(v)
 	}
