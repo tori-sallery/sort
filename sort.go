@@ -1,19 +1,26 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	//从小到大
-	originArr := []int{3, 7, 4, 0, 9, 31}
-	bubbleSort(originArr)
-	bubbleSort2(originArr)
+	originArr := []int{3, 7, 4, 0, 2, 31}
+
+	quickSort(0, len(originArr)-1, originArr)
 	for _, v := range originArr {
 		fmt.Println(v)
 	}
+	//bubbleSort(originArr)
+	//bubbleSort2(originArr)
+	//for _, v := range originArr {
+	//	fmt.Println(v)
+	//}
 }
 
 /*
-	冒泡排序
+	冒泡排序，和快排是一对
 */
 func bubbleSort(arr []int) {
 	arrLen := len(arr)
@@ -54,5 +61,29 @@ func bubbleSort2(arr []int) {
 			fmt.Print(" ")
 		}
 		fmt.Println()
+	}
+}
+
+func quickSort(start, end int, arr []int) {
+	i := start
+	j := end
+	k := arr[start]
+	if i < j {
+		for i < j {
+			for arr[i] < k {
+				i++
+			}
+			for arr[j] > k {
+				j--
+			}
+			arr[i], arr[j] = arr[j], arr[i]
+		}
+		//第一次排完 左边都比k小 右边比k大
+		for _, v := range arr {
+			fmt.Print(v)
+			fmt.Print(" ")
+		}
+		quickSort(start, i-1, arr)
+		quickSort(j+1, end, arr)
 	}
 }
