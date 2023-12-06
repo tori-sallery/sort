@@ -5,6 +5,7 @@ import (
 )
 
 func main() {
+
 	//从小到大
 	originArr := []int{3, 7, 4, 0, 2, 31}
 
